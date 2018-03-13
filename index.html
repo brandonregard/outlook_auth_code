@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Outlook Authentication Code</title>
+        <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    </head>
+    <body id="body">
+    Authentication Code:&nbsp;
+    <input id="auth-code" type="text" size="40">
+    <button class="btn" data-clipboard-target="#auth-code">Copy</button>
+    <script>
+        new ClipboardJS('.btn');
+        var url = new URL(document.location.href);
+        var input = document.getElementById('auth-code');
+        var code = url.searchParams.get('code');
+        input.value = code;
+    </script>
+    </body>
+</html>
